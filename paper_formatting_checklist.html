@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Formatting Checklist</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --primary-color: #2b6cb0;
+            --border-color: #e2e8f0;
+            --accent-color: #dd6b20;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .intro {
+            font-style: italic;
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            padding: 15px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .caution {
+            background-color: #fffaf0;
+            color: #c05621;
+            padding: 15px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid #f7fafc;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .checklist-item:hover {
+            background-color: #f7fafc;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 5px;
+            margin-right: 15px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checklist-item label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .checklist-item input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #a0aec0;
+        }
+
+        .progress-container {
+            position: sticky;
+            top: 0;
+            background: var(--card-bg);
+            padding: 15px 0;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--border-color);
+            z-index: 10;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            height: 12px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #48bb78;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            text-align: right;
+            font-size: 0.875rem;
+            font-weight: bold;
+            color: #48bb78;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Paper Formatting Checklist</h1>
+    
+    <div class="intro">
+        Your teachers expect to receive papers that are properly formatted and laid out. Use the following guidelines when setting up your paper. It is easiest if you use the correct settings from the beginning; otherwise you will have to go back and reformat your paper.
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText">0% Completed</div>
+    </div>
+
+    <!-- Overall Page Layout -->
+    <div class="section">
+        <div class="section-title">Overall Page Layout</div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="layout1">
+            <label for="layout1">One inch margins on sides, top and bottom.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="layout2">
+            <label for="layout2">Use Times or Times New Roman 12 pt font.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="layout3">
+            <label for="layout3">Double-space the text of the paper.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="layout4">
+            <label for="layout4">Use left-justified text, which will have a ragged right edge. Do not use fully (newspaper-style) justified text.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="layout5">
+            <label for="layout5">Use a 1/2" indent for paragraph beginnings, block quotes and hanging (bibliography) indents.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="layout6">
+            <label for="layout6">Number the pages in the top right corner of the paper, beginning with the first page of text. Include your last name as well, in case pages become separated.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="layout7">
+            <label for="layout7">Number straight through from the first text page to the final bibliography page, but do not count any pages after the end of the text as part of your page count.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="layout8">
+            <label for="layout8">Ask your teacher if it is ok to print two-sided.</label>
+        </div>
+    </div>
+
+    <!-- Cover Page -->
+    <div class="section">
+        <div class="section-title">Cover Page</div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="cover1">
+            <label for="cover1">Center the title of your paper in the middle of the page, halfway down.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="cover2">
+            <label for="cover2">Center your name directly under the title.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="cover3">
+            <label for="cover3">Teacher's name, course title and block, and date written in three lines and centered at the bottom of the page.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="cover4">
+            <label for="cover4">Use Times or Times New Roman 12 pt font for the title page.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="cover5">
+            <label for="cover5">Do not try to make your cover page decorative by using bold, underline, or creative fonts.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="cover6">
+            <label for="cover6">Do not put a page number on the cover page, and do not count it as part of the total page count.</label>
+        </div>
+    </div>
+
+    <!-- Assemble Paper Order -->
+    <div class="section">
+        <div class="section-title">Assemble Your Paper in the Following Order</div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="order1">
+            <label for="order1">Cover/title page</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="order2">
+            <label for="order2">Body of the paper</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="order3">
+            <label for="order3">Appendix (if needed)</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="order4">
+            <label for="order4">Notes</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="order5">
+            <label for="order5">Bibliography</label>
+        </div>
+    </div>
+
+    <!-- Names and Numbers -->
+    <div class="section">
+        <div class="section-title">Names and Numbers</div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="names1">
+            <label for="names1">Use full names of people and agencies/legislation the first time you use them.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="names2">
+            <label for="names2">For agencies, include the acronym in parentheses after the full name when first used (e.g., Federal Emergency Relief Administration (FERA)).</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="names3">
+            <label for="names3">After the first time, refer to people by their last name or agencies/bills by their acronyms for the rest of the paper.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="names4">
+            <label for="names4">Write out numbers lower than 100 (e.g., “All nine members of the Supreme Court...”).</label>
+        </div>
+    </div>
+
+    <!-- Footnotes and Endnotes -->
+    <div class="section">
+        <div class="section-title">Footnotes and Endnotes</div>
+        
+        <div class="caution">
+            Caution: If you are writing your paper in Google Docs, you MUST use footnotes. Google Docs does not have a way to make Endnotes, and if you use the Endnote Generator add-on it will make a mess of your paper!
+        </div>
+
+        <div class="checklist-item">
+            <input type="checkbox" id="note1">
+            <label for="note1">Footnotes go at the bottom of the page where the reference occurs; endnotes go on a separate page after the body of the paper (both use the same formatting guidelines).</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note2">
+            <label for="note2">Within the essay text: put the note number at the end of the sentence where the reference occurs, even if the cited material is mentioned at the beginning of the sentence.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note3">
+            <label for="note3">The note number goes after all other punctuation.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note4">
+            <label for="note4">Be sure to use Arabic numerals (1, 2, 3), not Roman (i, ii, iii).</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note5">
+            <label for="note5">Put the word "Notes" (not Endnotes) at the top of the page with your endnotes.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note6">
+            <label for="note6">Use Times/Times New Roman 10 pt font for notes.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note7">
+            <label for="note7">Single space each note entry; double space between entries.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note8">
+            <label for="note8">Indent the first line of each note.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note9">
+            <label for="note9">Never reuse a number - use a new number for each reference, even if you have used that reference previously.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note10">
+            <label for="note10">Be sure to look at shortened form examples for sources you refer to more than once.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note11">
+            <label for="note11">To cite multiple sources in a single note, separate the two citations with a semicolon.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="note12">
+            <label for="note12">Never use two note numbers at the end of a sentence.</label>
+        </div>
+    </div>
+
+    <!-- Bibliography -->
+    <div class="section">
+        <div class="section-title">Bibliography</div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="bib1">
+            <label for="bib1">Bibliography goes on a separate page, with the word "Bibliography" centered at the top in Times/Times New Roman 12 pt font.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="bib2">
+            <label for="bib2">Do not use bold or large size font for the bibliography heading.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="bib3">
+            <label for="bib3">Be sure to use proper formatting - note and bibliography styles are structurally different.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="bib4">
+            <label for="bib4">Use a "hanging indent" - the first line of the citation begins at the margin, subsequent lines are indented.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="bib5">
+            <label for="bib5">If your source has no author, alphabetize by title within the authors - don't make a separate list.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="bib6">
+            <label for="bib6">Don't separate primary and secondary sources unless your teacher requests it.</label>
+        </div>
+    </div>
+
+    <!-- Common Errors -->
+    <div class="section">
+        <div class="section-title">Watch Out for These Common Errors</div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="error1">
+            <label for="error1">Note format uses First Name Last Name; bibliography uses Last Name, First Name.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="error2">
+            <label for="error2">In your notes, do not reuse numbers! Each citation gets a new number.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="error3">
+            <label for="error3">Pay attention to indents. Notes use a first line indent, while a bibliography uses a hanging indent.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="error4">
+            <label for="error4">A bibliography goes in alphabetical order by author/title. Notes are numbered and listed in the order they are used.</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="error5">
+            <label for="error5">Don't put "Works Cited" at the top of your bibliography - that is MLA style.</label>
+        </div>
+    </div>
+</div>
+
+<script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const progressFill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progressText');
+
+    function updateProgress() {
+        const total = checkboxes.length;
+        const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+        const percentage = Math.round((checked / total) * 100);
+
+        progressFill.style.width = percentage + '%';
+        progressText.textContent = percentage + '% Completed';
+    }
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateProgress);
+    });
+</script>
+
+</body>
+</html>
